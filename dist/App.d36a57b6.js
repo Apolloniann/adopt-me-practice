@@ -6807,7 +6807,7 @@ if ("development" !== "production") {
       }
 
       var eventName = 'on' + eventNameSuffix;
-      var isSupported = eventName in document;
+      var isSupported = (eventName in document);
 
       if (!isSupported) {
         var element = document.createElement('div');
@@ -30274,9 +30274,9 @@ var _history = require("./lib/history");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
@@ -32732,14 +32732,16 @@ class Carousel extends _react.default.Component {
       photos,
       active
     } = this.state;
-    return _react.default.createElement("div", {
+    return /*#__PURE__*/_react.default.createElement("div", {
       className: "carousel"
-    }, _react.default.createElement("img", {
+    }, /*#__PURE__*/_react.default.createElement("img", {
       src: photos[active],
       alt: "animal"
-    }), _react.default.createElement("div", {
+    }), /*#__PURE__*/_react.default.createElement("div", {
       className: "carousel-smaller"
-    }, photos.map((photo, index) => // eslint-disable-next-line
+    }, photos.map((photo, index) =>
+    /*#__PURE__*/
+    // eslint-disable-next-line
     _react.default.createElement("img", {
       key: photo,
       onClick: this.handleIndexClick,
@@ -32766,9 +32768,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const modalRoot = document.getElementById("modal");
 
@@ -32785,7 +32787,7 @@ const Modal = ({
     modalRoot.appendChild(elRef.current);
     return () => modalRoot.removeChild(elRef.current);
   }, []);
-  return (0, _reactDom.createPortal)(_react.default.createElement("div", null, children), elRef.current);
+  return /*#__PURE__*/(0, _reactDom.createPortal)( /*#__PURE__*/_react.default.createElement("div", null, children), elRef.current);
 };
 
 var _default = Modal;
@@ -32802,9 +32804,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _router = require("@reach/router");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 // mostly code from reactjs.org/docs/error-boundaries.html
 class ErrorBoundary extends _react.Component {
@@ -32836,14 +32838,14 @@ class ErrorBoundary extends _react.Component {
 
   render() {
     if (this.state.redirect) {
-      return _react.default.createElement(_router.Redirect, {
+      return /*#__PURE__*/_react.default.createElement(_router.Redirect, {
         to: "/",
         noThrow: true
       });
     }
 
     if (this.state.hasError) {
-      return _react.default.createElement("h1", null, "There was an error with this listing. ", _react.default.createElement(_router.Link, {
+      return /*#__PURE__*/_react.default.createElement("h1", null, "There was an error with this listing. ", /*#__PURE__*/_react.default.createElement(_router.Link, {
         to: "/"
       }, "Click here"), " ", "to back to the home page or wait five seconds");
     }
@@ -32865,7 +32867,7 @@ exports.default = void 0;
 
 var _react = require("react");
 
-const ThemeContext = (0, _react.createContext)(["green", () => {}]);
+const ThemeContext = /*#__PURE__*/(0, _react.createContext)(["green", () => {}]);
 var _default = ThemeContext;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"Details.js":[function(require,module,exports) {
@@ -32931,7 +32933,7 @@ class Details extends _react.default.Component {
 
   render() {
     if (this.state.loading) {
-      return _react.default.createElement("h1", null, "loading \u2026 ");
+      return /*#__PURE__*/_react.default.createElement("h1", null, "loading \u2026 ");
     }
 
     const {
@@ -32943,20 +32945,20 @@ class Details extends _react.default.Component {
       name,
       showModal
     } = this.state;
-    return _react.default.createElement("div", {
+    return /*#__PURE__*/_react.default.createElement("div", {
       className: "details"
-    }, _react.default.createElement(_Carousel.default, {
+    }, /*#__PURE__*/_react.default.createElement(_Carousel.default, {
       media: media
-    }), _react.default.createElement("div", null, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, `${animal} — ${breed} — ${location}`), _react.default.createElement(_ThemeContext.default.Consumer, null, ([theme]) => _react.default.createElement("button", {
+    }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, name), /*#__PURE__*/_react.default.createElement("h2", null, `${animal} — ${breed} — ${location}`), /*#__PURE__*/_react.default.createElement(_ThemeContext.default.Consumer, null, ([theme]) => /*#__PURE__*/_react.default.createElement("button", {
       onClick: this.toggleModal,
       style: {
         backgroundColor: theme
       }
-    }, "Adopt ", name)), _react.default.createElement("p", null, description), showModal ? _react.default.createElement(_Modal.default, null, _react.default.createElement("h1", null, "Would you like to adopt ", name, "?"), _react.default.createElement("div", {
+    }, "Adopt ", name)), /*#__PURE__*/_react.default.createElement("p", null, description), showModal ? /*#__PURE__*/_react.default.createElement(_Modal.default, null, /*#__PURE__*/_react.default.createElement("h1", null, "Would you like to adopt ", name, "?"), /*#__PURE__*/_react.default.createElement("div", {
       className: "buttons"
-    }, _react.default.createElement("button", {
+    }, /*#__PURE__*/_react.default.createElement("button", {
       onClick: this.adopt
-    }, "Yes"), _react.default.createElement("button", {
+    }, "Yes"), /*#__PURE__*/_react.default.createElement("button", {
       onClick: this.toggleModal
     }, "No, I am a monster"))) : null));
   }
@@ -32964,7 +32966,7 @@ class Details extends _react.default.Component {
 }
 
 function DetailsErrorBoundary(props) {
-  return _react.default.createElement(_ErrorBoundary.default, null, _react.default.createElement(Details, props));
+  return /*#__PURE__*/_react.default.createElement(_ErrorBoundary.default, null, /*#__PURE__*/_react.default.createElement(Details, props));
 }
 },{"react":"../node_modules/react/index.js","@frontendmasters/pet":"../node_modules/@frontendmasters/pet/index.js","@reach/router":"../node_modules/@reach/router/es/index.js","./Carousel":"Carousel.js","./Modal":"Modal.js","./ErrorBoundary":"ErrorBoundary.js","./ThemeContext":"ThemeContext.js"}],"useDropdown.js":[function(require,module,exports) {
 "use strict";
@@ -32976,23 +32978,23 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const useDropdown = (label, defaultState, options) => {
   const [state, updateState] = (0, _react.useState)(defaultState);
   const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`;
 
-  const Dropdown = () => _react.default.createElement("label", {
+  const Dropdown = () => /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: id
-  }, label, _react.default.createElement("select", {
+  }, label, /*#__PURE__*/_react.default.createElement("select", {
     id: id,
     value: state,
     onChange: e => updateState(e.target.value),
     onBlur: e => updateState(e.target.value),
     disabled: !options.length
-  }, _react.default.createElement("option", null), options.map(item => _react.default.createElement("option", {
+  }, /*#__PURE__*/_react.default.createElement("option", null), options.map(item => /*#__PURE__*/_react.default.createElement("option", {
     key: item,
     value: item
   }, item))));
@@ -33031,17 +33033,17 @@ const Pet = props => {
     hero = media[0].small;
   }
 
-  return _react.default.createElement(_router.Link, {
+  return /*#__PURE__*/_react.default.createElement(_router.Link, {
     to: `/details/${id}`,
     className: "pet"
-  }, _react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "image-container"
-  }, _react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: hero,
     alt: name
-  })), _react.default.createElement("div", {
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "info"
-  }, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, `${animal} — ${breed} — ${location}`)));
+  }, /*#__PURE__*/_react.default.createElement("h1", null, name), /*#__PURE__*/_react.default.createElement("h2", null, `${animal} — ${breed} — ${location}`)));
 };
 
 var _default = Pet;
@@ -33063,10 +33065,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const Results = ({
   pets
 }) => {
-  return _react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "search"
-  }, !pets.length ? _react.default.createElement("h1", null, "No Pets Found") : pets.map(pet => {
-    return _react.default.createElement(_Pet.default, {
+  }, !pets.length ? /*#__PURE__*/_react.default.createElement("h1", null, "No Pets Found") : pets.map(pet => {
+    return /*#__PURE__*/_react.default.createElement(_Pet.default, {
       animal: pet.type,
       key: pet.id,
       name: pet.name,
@@ -33100,9 +33102,9 @@ var _ThemeContext = _interopRequireDefault(require("./ThemeContext"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const SearchParams = () => {
   const [theme, setTheme] = (0, _react.useContext)(_ThemeContext.default);
@@ -33137,39 +33139,39 @@ const SearchParams = () => {
       updateBreeds(breedStrings);
     }, console.error);
   }, [animal]);
-  return _react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
     className: "search-params"
-  }, _react.default.createElement("form", {
+  }, /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: e => {
       e.preventDefault();
       requestPets();
     }
-  }, _react.default.createElement("label", {
+  }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "location"
-  }, "Location", _react.default.createElement("input", {
+  }, "Location", /*#__PURE__*/_react.default.createElement("input", {
     id: "location",
     value: location,
     placeholder: "Location",
     onChange: e => updateLocation(e.target.value)
-  })), _react.default.createElement(AnimalDropdown, null), _react.default.createElement(BreedDropdown, null), _react.default.createElement("label", {
+  })), /*#__PURE__*/_react.default.createElement(AnimalDropdown, null), /*#__PURE__*/_react.default.createElement(BreedDropdown, null), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "location"
-  }, "Theme", _react.default.createElement("select", {
+  }, "Theme", /*#__PURE__*/_react.default.createElement("select", {
     value: theme,
     onChange: e => setTheme(e.target.value),
     onBlur: e => setTheme(e.target.value)
-  }, _react.default.createElement("option", {
+  }, /*#__PURE__*/_react.default.createElement("option", {
     value: "peru"
-  }, "Peru"), _react.default.createElement("option", {
+  }, "Peru"), /*#__PURE__*/_react.default.createElement("option", {
     value: "darkblue"
-  }, "Dark Blue"), _react.default.createElement("option", {
+  }, "Dark Blue"), /*#__PURE__*/_react.default.createElement("option", {
     value: "chartreuse"
-  }, "Chartreuse"), _react.default.createElement("option", {
+  }, "Chartreuse"), /*#__PURE__*/_react.default.createElement("option", {
     value: "mediumorchid"
-  }, "Medium Orchid"))), _react.default.createElement("button", {
+  }, "Medium Orchid"))), /*#__PURE__*/_react.default.createElement("button", {
     style: {
       backgroundColor: theme
     }
-  }, "Submit")), _react.default.createElement(_Results.default, {
+  }, "Submit")), /*#__PURE__*/_react.default.createElement(_Results.default, {
     pets: pets
   }));
 };
@@ -33193,24 +33195,24 @@ var _ThemeContext = _interopRequireDefault(require("./ThemeContext"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const App = () => {
   const theme = (0, _react.useState)("darkblue");
-  return _react.default.createElement(_ThemeContext.default.Provider, {
+  return /*#__PURE__*/_react.default.createElement(_ThemeContext.default.Provider, {
     value: theme
-  }, _react.default.createElement("div", null, _react.default.createElement("header", null, _react.default.createElement(_router.Link, {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement(_router.Link, {
     to: "/"
-  }, "Adopt Me!")), _react.default.createElement(_router.Router, null, _react.default.createElement(_SearchParams.default, {
+  }, "Adopt Me!")), /*#__PURE__*/_react.default.createElement(_router.Router, null, /*#__PURE__*/_react.default.createElement(_SearchParams.default, {
     path: "/"
-  }), _react.default.createElement(_Details.default, {
+  }), /*#__PURE__*/_react.default.createElement(_Details.default, {
     path: "/details/:id"
   }))));
 };
 
-_reactDom.default.render(_react.default.createElement(App, null), document.getElementById("root"));
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById("root"));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","@reach/router":"../node_modules/@reach/router/es/index.js","./Details":"Details.js","./SearchParams":"SearchParams.js","./ThemeContext":"ThemeContext.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -33239,7 +33241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39475" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37297" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -33270,8 +33272,9 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         assetsToAccept.forEach(function (v) {
           hmrAcceptRun(v[0], v[1]);
         });
-      } else {
-        window.location.reload();
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
       }
     }
 
